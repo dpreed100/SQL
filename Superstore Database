@@ -42,3 +42,20 @@ FROM superstore;
 SELECT avg(price)
 FROM superstore
 WHERE category="Kitchen Supplies"
+
+#These are the lines of code I came up with to run some extra aggregate data
+SELECT (item_name), price
+FROM superstore
+ORDER BY price;
+
+SELECT SUM(price)
+FROM superstore;
+
+SELECT MAX(stock_quantity)
+FROM superstore;
+
+SELECT category,
+SUM(stock_quantity)
+FROM superstore
+WHERE category = 'Kitchen Supplies'
+GROUP BY category;
